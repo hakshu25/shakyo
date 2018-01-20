@@ -103,3 +103,14 @@ symbol = :apple
 # シンボルはハッシュのkeyにもできる
 countries_money = { :japan => 'yen', :us => 'dollar', :india => 'rupee' }
 countries_money[:japan]
+
+# シンボルをkeyにする場合、jsonlikeな記法にできる
+# 値を取り出す時はシンボルのまま
+money = { japan: 'yen', us: 'dollar', india: 'rupee' }
+puts money[:japan]
+
+# 値もシンボルの場合
+{ japan: :yen, us: :dollar, india: :rupee }
+
+# データ型が異なると値は取り出せない
+puts money['japan'].nil?
