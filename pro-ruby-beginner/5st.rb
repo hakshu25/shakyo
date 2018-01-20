@@ -90,3 +90,16 @@ puts :apple.object_id
 
 puts 'apple'.object_id
 puts 'apple'.object_id
+
+# シンボルはイミュータブル
+string = 'apple'
+string.upcase!
+puts string
+
+symbol = :apple
+# 以下はエラーになる
+# symbol.upcase!
+
+# シンボルはハッシュのkeyにもできる
+countries_money = { :japan => 'yen', :us => 'dollar', :india => 'rupee' }
+countries_money[:japan]
