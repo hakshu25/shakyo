@@ -35,3 +35,28 @@ puts hash['italy']
 # 存在しないkeyはnil
 puts hash['brazil']
 
+# keyとvalueを順次取り出し
+hash.each do |key, value|
+    puts "#{key} : #{value}"
+end
+
+# 引数を1個にできる その場合[key, value]という配列になる
+hash.each do |key_value|
+    key = key_value[0]
+    value = key_value[1]
+    puts "#{key} : #{value}"
+end
+
+# ==でハッシュ比較
+a = { 'x' => 1, 'y' => 2, 'z' => 3 }
+b = { 'x' => 1, 'y' => 2, 'z' => 3 }
+# true
+puts a == b
+
+# 順序が違ってもtrue
+c = { 'z' => 3, 'y' => 2, 'x' => 1 }
+puts a == c
+
+# false
+d = { 'x' => 1, 'y' => 2, 'z' => 2 }
+puts a == d
