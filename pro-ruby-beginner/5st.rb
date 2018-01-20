@@ -114,3 +114,32 @@ puts money[:japan]
 
 # データ型が異なると値は取り出せない
 puts money['japan'].nil?
+
+# キーワード引数(キーワード引数: デフォルト値)
+def buy_burger(menu, drink: true, potato: true)
+    # ハンバーガー購入
+    if drink
+        # ドリンク購入
+    end
+    if potato
+        # ポテト購入
+    end
+end
+
+# メソッド呼び出し(存在しない引数呼び出しはエラー)
+buy_burger('cheese', drink: true, potato: true)
+buy_burger('fish', drink: true, potato: false)
+
+# デフォルト値を使う場合は引数を省略できる
+buy_burger('cheese', potato: true)
+
+# キーワード引数は呼び出し時に入れ替えられる
+buy_burger('cheese', potato: true, drink: true)
+
+# デフォルト値は省略可能 その場合呼び出し時は省略できない
+def buy_cookie(menu, drink:, potato:)
+end
+
+# キーワード引数に一致するハッシュを渡すこともできる
+params = {drink: true, potato: true}
+buy_burger('fish', params)
