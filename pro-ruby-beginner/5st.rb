@@ -75,3 +75,18 @@ puts currencies
 
 # 削除したいkeyが無い場合はnilが返る
 puts currencies.delete('italy').nil?
+
+# シンボル :シンボル名
+puts :apple.class
+puts 'apple'.class
+
+# 文字列よりもシンボルのほうが高速に比較できる
+'apple' == 'apple'
+:apple == :apple
+
+# 同名のシンボルは同じオブジェクト
+puts :apple.object_id
+puts :apple.object_id
+
+puts 'apple'.object_id
+puts 'apple'.object_id
