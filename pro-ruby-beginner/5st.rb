@@ -20,3 +20,18 @@ puts {}.class
 # 同キーが出る場合は最後が有効 warningが出る
 hash = { 'japan' => 'yen', 'japan' => '円'}
 puts hash
+
+# ハッシュに新規追加
+hash['italy'] = 'euro'
+puts hash
+
+# 同キーは上書き
+hash['japan'] = 'yen'
+puts hash
+
+# ハッシュから値取り出し
+puts hash['italy']
+
+# 存在しないkeyはnil
+puts hash['brazil']
+
