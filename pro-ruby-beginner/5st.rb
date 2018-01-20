@@ -60,3 +60,18 @@ puts a == c
 # false
 d = { 'x' => 1, 'y' => 2, 'z' => 2 }
 puts a == d
+
+# ハッシュの要素数
+s = {}.size
+# 0
+puts s
+# 3
+puts a.size
+
+# 要素削除
+currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
+currencies.delete('japan')
+puts currencies
+
+# 削除したいkeyが無い場合はnilが返る
+puts currencies.delete('italy').nil?
