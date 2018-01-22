@@ -143,3 +143,13 @@ end
 # キーワード引数に一致するハッシュを渡すこともできる
 params = {drink: true, potato: true}
 buy_burger('fish', params)
+
+# keyを配列にして返す
+puts params.keys
+
+# valueを配列にして返す
+puts params.values
+
+# keyの存在確認
+puts params.has_key?(:drink)
+puts params.has_key?(:fish)
