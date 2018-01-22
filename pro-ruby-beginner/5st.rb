@@ -161,3 +161,9 @@ puts h
 # k = { fish: false, params }
 
 puts h.merge(params)
+
+# 想定外のキーワードはothers引数で受け取る
+def buy_burg(menu, drink:true, potato: true, **others)
+    puts others
+end
+buy_burg('fish', drink: true, potato: false, salad: true, chicken: false)
