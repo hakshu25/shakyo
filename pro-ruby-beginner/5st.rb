@@ -167,3 +167,9 @@ def buy_burg(menu, drink:true, potato: true, **others)
     puts others
 end
 buy_burg('fish', drink: true, potato: false, salad: true, chicken: false)
+
+# シンボルには%記法が使える
+puts %s!ruby is fun!
+puts %i(apple orange melon)
+name = 'leo'
+puts %I(hello\ngood-bye #{name.upcase})
