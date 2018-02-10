@@ -64,8 +64,7 @@ end
 # 便利メソッド
 
 # scan
-# @param Regexp
-# @return Array 
+# マッチした部分を配列に格納
 puts '123 456 789'.scan(/\d+/).class
 #キャプチャにも対応
 puts '1977年7月17日 2016年12月31日'.scan(/(\d+)年(\d+)月(\d+)日/)
@@ -78,3 +77,20 @@ puts text3[/\d{3}-\d{4}/]
 str4 = '1977年7月17日 2016年12月31日'
 puts str4[/(\d+)年(\d+)月(\d+)日/, 2]
 
+# split
+# マッチした文字列を分解して配列に格納
+address = '123,456-789'
+puts address.split(',')
+puts address.split(/,|-/)
+
+# gsub,gsub!
+# マッチした文字列を第二引数の文字列に置き換える
+puts address.gsub(',', ':')
+puts address.gsub(/,|-/, ':')
+# キャプチャは\1や\2で参照できる
+# 名付けキャプチャは\k<name>で参照可能
+puts str4.gsub(/(\d+)年(\d+)月(\d+)日/, '\1-\2-\3')
+puts str4.gsub(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, '\k<year>-\k<month>-\k<day>')
+# 第二引数で渡す変換ルールはハッシュにして複数指定することもできる
+# ブロック値も使える
+hash = { ',' => ':', '-' => '/' }
