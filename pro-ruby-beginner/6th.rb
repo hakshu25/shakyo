@@ -47,3 +47,15 @@ puts m[2] # 7
 puts m[3] # 17
 # 2番目から2個取得する
 puts m[2, 2]
+
+# キャプチャの結果に命名できる
+m2 = /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/.match(str)
+puts m2[:year]
+puts m2[:month]
+puts m2[:day]
+
+# =~演算子でキャプチャ名をローカル変数に割り当てられる
+# 左辺を正規表現 右辺を文字列にしないとエラー
+if /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/ =~ str
+    puts "#{year}/#{month}/#{day}"
+end
