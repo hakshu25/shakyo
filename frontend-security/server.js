@@ -1,13 +1,21 @@
 import express from 'express';
 import crypto from 'crypto';
 import api from './routes/api.js';
+import csrf from './routes/csrf.js';
 
 const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(
+  express.static('public', {
+    setHeaders: (res, path, stat) => {
+      res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    },
+  })
+);
 app.use('/api', api);
+app.use('/csrf', csrf);
 
 app.get('/', (req, res, next) => {
   res.end('Top page');
